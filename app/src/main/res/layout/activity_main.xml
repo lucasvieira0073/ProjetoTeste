@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:text="OK"
+        android:id="@+id/botao"
         android:focusedByDefault="true"/>
 
 </LinearLayout>

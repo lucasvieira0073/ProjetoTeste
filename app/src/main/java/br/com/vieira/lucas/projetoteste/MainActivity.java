@@ -4,10 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements View.OnFocusChangeListener {
     EditText edt;
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
         setContentView(R.layout.activity_main);
 
         edt = (EditText) findViewById(R.id.edtTeste);
+        btn = (Button) findViewById(R.id.botao);
 
         edt.setText("10,00000");
         edt.setOnFocusChangeListener(this);
@@ -28,6 +33,18 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
         edt.setFilters(filter);
 
         //edt.setText(Double.toString(10.5));
+
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    MediaSound.executar(MainActivity.this);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
 
 

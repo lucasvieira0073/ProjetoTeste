@@ -1,5 +1,8 @@
 package br.com.vieira.lucas.projetoteste;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -47,6 +50,14 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
                 }
             }
         });
+
+        ProgressDialog progressDialog;
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("alerta");
+        progressDialog.setMessage("carregando");
+        progressDialog.setCancelable(false);
+
+        progressDialog.show();
 
     }
 
